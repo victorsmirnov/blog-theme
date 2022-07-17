@@ -916,7 +916,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-card-large .post-card-title {
         margin-top: 0;
-        font-size: 4.4rem;
         line-height: 1;
     }
 
@@ -995,9 +994,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .article-title {
     margin-bottom: 0;
-    font-size: clamp(3.2rem, 5vw, 5.2rem);
-    font-weight: 800;
-    line-height: 1;
     color: var(--color-darkgrey);
 }
 
@@ -1145,6 +1141,15 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
+}
+
+.gh-content > blockquote:first-child,
+.gh-content > ol:first-child,
+.gh-content > ul:first-child,
+.gh-content > dl:first-child,
+.gh-content > p:first-child {
+    font-weight: 400;
+    font-size: 2.2rem;
 }
 
 .gh-content .kg-callout-card .kg-callout-text,

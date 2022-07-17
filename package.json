@@ -34,7 +34,7 @@
                     "Modern sans-serif",
                     "Elegant serif"
                 ],
-                "default": "Modern sans-serif"
+                "default": "Elegant serif"
             },
             "body_font": {
                 "type": "select",
@@ -42,11 +42,11 @@
                     "Modern sans-serif",
                     "Elegant serif"
                 ],
-                "default": "Elegant serif"
+                "default": "Modern sans-serif"
             },
             "show_publication_cover": {
                 "type": "boolean",
-                "default": true,
+                "default": false,
                 "group": "homepage"
             },
             "header_style": {
@@ -56,12 +56,12 @@
                     "Left aligned",
                     "Hidden"
                 ],
-                "default": "Center aligned",
+                "default": "Hidden",
                 "group": "homepage"
             },
             "show_logo_in_navigation": {
                 "type": "boolean",
-                "default": false,
+                "default": true,
                 "group": "homepage"
             },
             "feed_layout": {
@@ -71,7 +71,7 @@
                     "Grid",
                     "List"
                 ],
-                "default": "Classic",
+                "default": "List",
                 "group": "homepage"
             },
             "color_scheme": {
