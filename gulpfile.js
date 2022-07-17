@@ -19,8 +19,9 @@ const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
 
-const REPO = 'TryGhost/Casper';
-const REPO_READONLY = 'TryGhost/Casper';
+const userAgent = 'BlogTheme';
+const REPO = 'victorsmirnov/blog-theme';
+const REPO_READONLY = 'victorsmirnov/blog-theme';
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
@@ -129,7 +130,7 @@ exports.release = async () => {
         const compatibleWithGhost = result.compatibleWithGhost;
 
         const releasesResponse = await releaseUtils.releases.get({
-            userAgent: 'Casper',
+            userAgent,
             uri: `https://api.github.com/repos/${REPO_READONLY}/releases`
         });
 
@@ -159,7 +160,7 @@ exports.release = async () => {
             preRelease: false,
             tagName: 'v' + newVersion,
             releaseName: newVersion,
-            userAgent: 'Casper',
+            userAgent,
             uri: `https://api.github.com/repos/${REPO}/releases`,
             github: {
                 token: githubToken
