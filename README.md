@@ -8,8 +8,8 @@ At the moment this is an in house project. The readme file should help me with p
 
 ## Planning and questions
 
-* [ ] Syntax highlighting.
-* [ ] GitHub actions for deployment.
+* [x] Syntax highlighting.
+* [x] GitHub actions for deployment.
 * [ ] GitHub profile link.
 
 ## External documentation
