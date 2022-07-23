@@ -1,15 +1,15 @@
 {{!< default}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-<div class="inner posts">
+<main id="site-main" class="site-main">
 
-    <div class="post-feed">
+    <div class="post-home-feed js-post-feed-scroll">
+
         {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
             {{> "post-card"}}
         {{/foreach}}
+
     </div>
 
-</div>
 </main>

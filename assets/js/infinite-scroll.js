@@ -10,10 +10,13 @@
  *
  * The individual post items are extracted from the fetched pages by looking for
  * a wrapper element with the class "post-card". Any found elements are appended
- * to the element with the class "post-feed" in the currently viewed page.
+ * to the element with the class "post-feed-scroll" in the currently viewed page.
  */
 
 (function (window, document) {
+    const feedSelector = '.js-post-feed-scroll';
+    const cardSelector = 'article.post-card';
+
     // next link element
     var nextElement = document.querySelector('link[rel=next]');
     if (!nextElement) {
@@ -21,7 +24,7 @@
     }
 
     // post feed element
-    var feedElement = document.querySelector('.post-feed');
+    var feedElement = document.querySelector(feedSelector);
     if (!feedElement) {
         return;
     }
@@ -43,7 +46,7 @@
         }
 
         // append contents
-        var postElements = this.response.querySelectorAll('article.post-card');
+        var postElements = this.response.querySelectorAll(cardSelector);
         postElements.forEach(function (item) {
             // document.importNode is important, without it the item's owner
             // document will be different which can break resizing of

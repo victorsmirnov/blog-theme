@@ -9,7 +9,7 @@
     ],
     "bugs": "https://github.com/victorsmirnov/blog-theme/issues",
     "config": {
-        "posts_per_page": 25,
+        "posts_per_page": 24,
         "image_sizes": {
             "xxs": {
                 "width": 30
