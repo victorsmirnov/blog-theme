@@ -44,16 +44,6 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "header_style": {
-                "type": "select",
-                "options": [
-                    "Center aligned",
-                    "Left aligned",
-                    "Hidden"
-                ],
-                "default": "Hidden",
-                "group": "homepage"
-            },
             "show_logo_in_navigation": {
                 "type": "boolean",
                 "default": true,

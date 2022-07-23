@@ -1,24 +1,5 @@
 {{!< default}}
 
-<div class="site-header-content outer{{#match @custom.header_style "Left aligned"}} left-aligned{{/match}}{{#match @custom.header_style "Hidden"}} no-content{{/match}}">
-
-    {{#match @custom.header_style "!=" "Hidden"}}
-        <div class="site-header-inner inner">
-            {{#unless @custom.show_logo_in_navigation}}
-                {{#if @site.logo}}
-                    <img class="site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
-                {{else}}
-                    <h1 class="site-title">{{@site.title}}</h1>
-                {{/if}}
-            {{/unless}}
-            {{#if @site.description}}
-                <p class="site-description">{{@site.description}}</p>
-            {{/if}}
-        </div>
-    {{/match}}
-
-</div>
-
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
