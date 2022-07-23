@@ -44,11 +44,6 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "show_publication_cover": {
-                "type": "boolean",
-                "default": false,
-                "group": "homepage"
-            },
             "header_style": {
                 "type": "select",
                 "options": [
