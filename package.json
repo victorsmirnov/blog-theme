@@ -1,5 +1,9 @@
 {
-    "author": "Ghost Foundation <hello@ghost.org> (https://ghost.org/), Victor Smirnov <admin@victorsmirnov.blog> (https://victorsmirnov.blog)",
+    "author": {
+        "email": "admin@victorsmirnov.blog",
+        "name": "Victor Smirnov",
+        "url": "https://victorsmirnov.blog"
+    },
     "browserslist": [
         "defaults"
     ],
@@ -44,11 +48,6 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "show_logo_in_navigation": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
             "feed_layout": {
                 "type": "select",
                 "options": [
@@ -91,7 +90,6 @@
             }
         }
     },
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
     "demo": "https://victorsmirnov.blog",
     "description": "Theme for the victorsmirnov.blog",
     "devDependencies": {
@@ -113,7 +111,8 @@
         "pump": "3.0.0"
     },
     "engines": {
-        "ghost": ">=5.0.0"
+        "ghost": ">=5.0.0",
+        "ghost-api": ">=5"
     },
     "gpm": {
         "type": "theme",

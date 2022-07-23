@@ -141,10 +141,6 @@ production stylesheet in assets/built/screen.css
     margin-top: -2px;
 }
 
-.no-logo .gh-head-logo {
-    display: none;
-}
-
 .gh-head-logo img {
     max-height: 26px;
 }
@@ -163,10 +159,6 @@ production stylesheet in assets/built/screen.css
     align-items: center;
     margin-top: 1px;
     font-weight: 500;
-}
-
-.no-logo .gh-head-menu {
-    margin-left: -40px;
 }
 
 .gh-head-menu .nav {
@@ -390,9 +382,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         align-items: center;
         justify-content: space-between;
         user-select: none;
-    }
-    .no-logo #gh-head .gh-head-brand {
-        justify-content: flex-end;
     }
     #gh-head .gh-head-menu {
         align-self: center;
