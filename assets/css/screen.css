@@ -28,9 +28,6 @@ production stylesheet in assets/built/screen.css
 /* Import CSS reset and base styles */
 @import "global.css";
 
-/* Import code highlighting styles */
-@import "prism.css";
-
 :root {
 
     /* Colours */
