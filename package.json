@@ -48,16 +48,6 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "feed_layout": {
-                "type": "select",
-                "options": [
-                    "Classic",
-                    "Grid",
-                    "List"
-                ],
-                "default": "List",
-                "group": "homepage"
-            },
             "color_scheme": {
                 "type": "select",
                 "options": [
