@@ -65,7 +65,7 @@ green     #859900
 	background: var(--code-color-background);
 	border-radius: 0.25em;
 	color: var(--code-color-default);
-	font-family: monospace; /* var(--code-font); */
+	font-family: var(--code-font);
 	font-size: 2rem;
 	hyphens: none;
 	line-height: 1.5em;

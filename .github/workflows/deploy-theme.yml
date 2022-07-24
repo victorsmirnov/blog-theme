@@ -27,5 +27,5 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-          PATHS: "/assets/built/blog-theme.js /assets/built/blog-theme.js.map /assets/built/global.css /assets/built/global.css.map /assets/built/prism.css /assets/built/prism.css.map /assets/built/screen.css /assets/built/screen.css.map"
+          PATHS: "/assets/built/*"
           AWS_REGION: "us-east-1"

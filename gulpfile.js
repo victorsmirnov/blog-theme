@@ -1,28 +1,21 @@
-const {series, watch, src, dest, parallel} = require('gulp');
-const pump = require('pump');
-const path = require('path');
-const releaseUtils = require('@tryghost/release-utils');
-const inquirer = require('inquirer');
+import gulp from 'gulp';
+import pump from 'pump';
 
 // gulp plugins and utils
-const livereload = require('gulp-livereload');
-const postcss = require('gulp-postcss');
-const zip = require('gulp-zip');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const beeper = require('beeper');
-const fs = require('fs');
+import livereload from 'gulp-livereload';
+import postcss from 'gulp-postcss';
+import gulpZip from 'gulp-zip';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+import beeper from 'beeper';
 
 // postcss plugins
-const autoprefixer = require('autoprefixer');
-const colorFunction = require('postcss-color-mod-function');
-const cssnano = require('cssnano');
-const easyimport = require('postcss-easy-import');
+import autoprefixer from 'autoprefixer';
+import colorFunction from 'postcss-color-mod-function';
+import cssnano from 'cssnano';
+import easyImport from 'postcss-easy-import';
 
-const userAgent = 'BlogTheme';
-const REPO = 'victorsmirnov/blog-theme';
-const REPO_READONLY = 'victorsmirnov/blog-theme';
-const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
+const {series, watch, src, dest, parallel} = gulp;
 
 function serve(done) {
     livereload.listen();
@@ -49,7 +42,7 @@ function css(done) {
     pump([
         src('assets/css/*.css', {sourcemaps: true}),
         postcss([
-            easyimport,
+            easyImport,
             colorFunction(),
             autoprefixer(),
             cssnano()
@@ -74,7 +67,8 @@ function js(done) {
 }
 
 function zipper(done) {
-    const filename = require('./package.json').name + '.zip';
+    // Sorry, I am too lazy to load the theme name from the package.json file.
+    const filename = 'blog-theme.zip';
 
     pump([
         src([
@@ -85,7 +79,7 @@ function zipper(done) {
             '!yarn.lock',
             '!gulpfile.js'
         ]),
-        zip(filename),
+        gulpZip(filename),
         dest('dist/')
     ], handleError(done));
 }
@@ -94,84 +88,7 @@ const cssWatcher = () => watch('assets/css/**', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const jsWatcher = () => watch('assets/js/**', js);
 const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher);
-const build = series(css, js);
 
-exports.build = build;
-exports.zip = series(build, zipper);
-exports.default = series(build, serve, watcher);
-
-exports.release = async () => {
-    // @NOTE: https://yarnpkg.com/lang/en/docs/cli/version/
-    // require(./package.json) can run into caching issues, this re-reads from file everytime on release
-    let packageJSON = JSON.parse(fs.readFileSync('./package.json'));
-    const newVersion = packageJSON.version;
-
-    if (!newVersion || newVersion === '') {
-        console.log(`Invalid version: ${newVersion}`);
-        return;
-    }
-
-    console.log(`\nCreating release for ${newVersion}...`);
-
-    const githubToken = process.env.GST_TOKEN;
-
-    if (!githubToken) {
-        console.log('Please configure your environment with a GitHub token located in GST_TOKEN');
-        return;
-    }
-
-    try {
-        const result = await inquirer.prompt([{
-            type: 'input',
-            name: 'compatibleWithGhost',
-            message: 'Which version of Ghost is it compatible with?',
-            default: '4.0.0'
-        }]);
-
-        const compatibleWithGhost = result.compatibleWithGhost;
-
-        const releasesResponse = await releaseUtils.releases.get({
-            userAgent,
-            uri: `https://api.github.com/repos/${REPO_READONLY}/releases`
-        });
-
-        if (!releasesResponse || !releasesResponse) {
-            console.log('No releases found. Skipping...');
-            return;
-        }
-
-        let previousVersion = releasesResponse[0].tag_name || releasesResponse[0].name;
-        console.log(`Previous version: ${previousVersion}`);
-
-        const changelog = new releaseUtils.Changelog({
-            changelogPath: CHANGELOG_PATH,
-            folder: path.join(process.cwd(), '.')
-        });
-
-        changelog
-            .write({
-                githubRepoPath: `https://github.com/${REPO}`,
-                lastVersion: previousVersion
-            })
-            .sort()
-            .clean();
-
-        const newReleaseResponse = await releaseUtils.releases.create({
-            draft: true,
-            preRelease: false,
-            tagName: 'v' + newVersion,
-            releaseName: newVersion,
-            userAgent,
-            uri: `https://api.github.com/repos/${REPO}/releases`,
-            github: {
-                token: githubToken
-            },
-            content: [`**Compatible with Ghost ≥ ${compatibleWithGhost}**\n\n`],
-            changelogPath: CHANGELOG_PATH
-        });
-        console.log(`\nRelease draft generated: ${newReleaseResponse.releaseUrl}\n`);
-    } catch (err) {
-        console.error(err);
-        process.exit(1);
-    }
-};
+export const build = series(css, js);
+export const zip = series(build, zipper);
+export default series(build, serve, watcher);

@@ -81,8 +81,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font: inherit;
-    font-size: 100%;
     vertical-align: baseline;
 }
 body {
@@ -169,13 +167,9 @@ svg:not(:root) {
 mark {
     background-color: #fdffb6;
 }
-code,
 kbd,
-pre,
 samp {
-    /*
-    font-family: monospace, monospace;
-    */
+    font-family: monospace;
     font-size: 1em;
 }
 kbd {
