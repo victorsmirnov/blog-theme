@@ -72,11 +72,6 @@
                 "type": "text",
                 "default": "Sign up for more like this.",
                 "group": "post"
-            },
-            "show_recent_posts_footer": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
             }
         }
     },

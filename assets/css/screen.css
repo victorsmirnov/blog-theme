@@ -1292,24 +1292,14 @@ iframe.instagram-media + script + :not([id]) {
 
 @media (max-width: 1000px) {
     .read-more {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .read-more .post-card:nth-child(3) {
-        display: none;
-    }
-}
-
-@media (max-width: 700px) {
-    .read-more {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .read-more .post-card:nth-child(2) {
-        display: none;
+}
+@media (max-width: 700px) {
+    .read-more {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
-
 
 /* 8. Author Template
 /* ---------------------------------------------------------- */
