@@ -57,9 +57,9 @@ production stylesheet in assets/built/screen.css
     --font-mono: Menlo, Courier, monospace;
 
     /* Code block settings */
-    --code-color-default: #90a4ae;
-    --code-color-background: #fafafa;
-    --code-font: Roboto Mono, monospace;
+    --code-color-default: #657b83; /* base00 */
+    --code-color-background: #fdf6e3; /* base3 */
+    --code-font: 'Ubuntu Mono', Consolas, Monaco, 'Andale Mono', monospace;
 }
 
 
@@ -829,42 +829,17 @@ created within the Ghost editor. The main content handles
 headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
-.gh-content > * + * {
-    margin-top: max(3.2vmin, 24px);
-    margin-bottom: 0;
+.gh-content {
+    row-gap: max(3.2vmin, 24px);
 }
 
 /* [id] represents all headings h1-h6, reset all margins */
 .gh-content > [id] {
-    margin: 0;
     color: var(--color-darkgrey);
 }
 
 .has-serif-title .gh-content > [id] {
     font-family: var(--font-serif);
-}
-
-/* Add back a top margin to all headings, unless a heading
-is the very first element in the post content */
-.gh-content > [id]:not(:first-child) {
-    margin: 2em 0 0;
-}
-
-/* Add a small margin between a heading and anything after it */
-.gh-content > [id] + * {
-    margin-top: 1.5rem !important;
-}
-
-/* A larger margin before/after HRs and blockquotes */
-.gh-content > hr,
-.gh-content > blockquote {
-    position: relative;
-    margin-top: max(4.8vmin, 32px);
-}
-
-.gh-content > hr + *,
-.gh-content > blockquote + * {
-    margin-top: max(4.8vmin, 32px) !important;
 }
 
 /* Now the content typography styles */
@@ -991,19 +966,23 @@ is the very first element in the post content */
 /* Cards are dynamic blocks of content which appear within Ghost
 posts, for example: embedded videos, tweets, galleries, or
 specially styled bookmark links. We add extra styling here to
-make sure they look good, and are given a bit of extra spacing. */
+make sure they look good. */
+/*
+    I do not like the spacing at all.
+    But I leave this code because I have not tried different cards yet.
+    Maybe I want this for some cards.
 
-/* Add extra margin before/after any cards,
-except for when immediately preceeded by a heading */
 .gh-content :not(.kg-card):not([id]) + .kg-card {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
-
 .gh-content .kg-card + :not(.kg-card) {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
+*/
+
+/* .kg-code-card styles go to prism.css */
 
 /* This keeps small embeds centered */
 .kg-embed-card {
