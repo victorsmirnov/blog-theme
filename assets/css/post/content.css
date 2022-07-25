@@ -13,9 +13,6 @@ headings, text, images and lists. We deal with cards lower down. */
 /* [id] represents all headings h1-h6, reset all margins */
 .gh-content > [id] {
     color: var(--color-darkgrey);
-}
-
-.has-serif-title .gh-content > [id] {
     font-family: var(--font-serif);
 }
 

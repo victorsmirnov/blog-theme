@@ -28,12 +28,9 @@
 }
 
 .article-title {
-    margin-bottom: 0;
     color: var(--color-darkgrey);
-}
-
-.has-serif-title .article-title {
     font-family: var(--font-serif);
+    margin-bottom: 0;
 }
 
 .article-excerpt {

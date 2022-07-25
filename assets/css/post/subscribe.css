@@ -7,13 +7,10 @@
 }
 
 .footer-cta-title {
-    margin: 0 0 min(24px, 6.4vmin);
+    font-family: var(--font-serif);
     font-size: clamp(2.6rem, 5vw, 3.8rem);
     font-weight: 800;
-}
-
-.has-serif-title .footer-cta-title {
-    font-family: var(--font-serif);
+    margin: 0 0 min(24px, 6.4vmin);
 }
 
 .footer-cta-button {

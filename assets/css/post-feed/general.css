@@ -142,7 +142,7 @@
     margin-top: 0;
 }
 
-.has-serif-title .post-card-title {
+.post-card-title {
     font-family: var(--font-serif);
     letter-spacing: -0.005em;
 }
