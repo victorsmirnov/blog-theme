@@ -28,6 +28,7 @@ production stylesheet in assets/built/screen.css
 @import "post/byline.css";
 @import "post/subscribe.css";
 @import "post/read-more.css";
+@import "post/footer.css";
 
 @import "author/author.css";
 

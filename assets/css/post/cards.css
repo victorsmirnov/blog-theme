@@ -116,31 +116,6 @@ iframe.instagram-media + script + :not([id]) {
     grid-column: main-start / main-end;
 }
 
-.article-comments {
-    margin: 6vmin 0 0 0;
-}
-
-/* -----old------ */
-
-.footnotes-sep {
-    margin-bottom: 30px;
-}
-
-.footnotes {
-    font-size: 1.5rem;
-}
-
-.footnotes p {
-    margin: 0;
-}
-
-.footnote-backref {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none !important;
-    box-shadow: none !important;
-}
-
 /* Tables */
 .gh-content table {
     display: inline-block;

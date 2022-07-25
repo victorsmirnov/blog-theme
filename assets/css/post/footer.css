@@ -1,0 +1,15 @@
+.article-footer {
+    padding: max(6.4vmin,40px) 0 0;
+}
+
+.article-footer h3 {
+    color: var(--color-secondary-text);
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.article-footer time {
+    font-size: 2rem;
+    line-height: 2em;
+}

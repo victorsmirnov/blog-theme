@@ -25,36 +25,6 @@ into the {body} tag of the default.hbs template --}}
 
         <h1 class="article-title">{{title}}</h1>
 
-        <div class="article-byline">
-        <section class="article-byline-content">
-
-            <ul class="author-list">
-                {{#foreach authors}}
-                <li class="author-list-item">
-                    {{#if profile_image}}
-                    <a href="{{url}}" class="author-avatar">
-                        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                    </a>
-                    {{else}}
-                    <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-                {{/foreach}}
-            </ul>
-
-            <div class="article-byline-meta">
-                <h4 class="author-name">{{authors}}</h4>
-                <div class="byline-meta-content">
-                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                    {{#if reading_time}}
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
-                    {{/if}}
-                </div>
-            </div>
-
-        </section>
-        </div>
-
         {{#match @custom.post_image_style "!=" "Hidden"}}
         {{#if feature_image}}
             <figure class="article-image">
@@ -82,11 +52,10 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{!--
-    <section class="article-comments gh-canvas">
-        If you want to embed comments, this is a good place to paste your code!
-    </section>
-    --}}
+    <footer class="article-footer gh-canvas">
+        <h3>Last updated</h3>
+        <time datetime="{{date updated_at format="YYYY-MM-DD"}}">{{date updated_at format="MMMM Do, YYYY"}}</time>
+    </footer>
 
 </article>
 </main>

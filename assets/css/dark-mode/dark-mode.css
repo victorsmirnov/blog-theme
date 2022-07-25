@@ -31,10 +31,6 @@ html.dark-mode .post-card-image {
     background: var(--color-darkmode);
 }
 
-html.dark-mode :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
-    color: color-mod(var(--color-secondary-text) l(-22%));
-}
-
 html.dark-mode .post-card-featured {
     color: #fff;
 }
@@ -57,23 +53,6 @@ html.dark-mode .article-excerpt {
 
 html.dark-mode .post-full-image {
     background-color: color-mod(var(--color-darkmode) l(+8%));
-}
-
-html.dark-mode .author-avatar {
-    border-color: var(--color-darkmode);
-    background-color: color-mod(var(--color-darkmode) l(+8%));
-}
-
-html.dark-mode .author-profile-image {
-    opacity: 1;
-}
-
-html.dark-mode .author-profile-image path {
-    fill: var(--color-darkmode);
-}
-
-html.dark-mode .article-byline-meta .author-name a {
-    color: #fff;
 }
 
 html.dark-mode .no-image .author-social-link a {
@@ -203,10 +182,6 @@ html.dark-mode .footer-cta-title {
         background: var(--color-darkmode);
     }
 
-    html.auto-color :is(.post-card-tags, .post-card-meta, .article-tag a, .byline-meta-content) {
-        color: color-mod(var(--color-secondary-text) l(-22%));
-    }
-
     html.auto-color .post-card-featured {
         color: #fff;
     }
@@ -229,23 +204,6 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .post-full-image {
         background-color: color-mod(var(--color-darkmode) l(+8%));
-    }
-
-    html.auto-color .author-avatar {
-        border-color: var(--color-darkmode);
-        background-color: color-mod(var(--color-darkmode) l(+8%));
-    }
-
-    html.auto-color .author-profile-image {
-        opacity: 1;
-    }
-
-    html.auto-color .author-profile-image path {
-        fill: var(--color-darkmode);
-    }
-
-    html.auto-color .article-byline-meta .author-name a {
-        color: #fff;
     }
 
     html.auto-color .no-image .author-social-link a {
