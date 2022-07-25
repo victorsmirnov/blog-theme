@@ -95,22 +95,11 @@ headings, text, images and lists. We deal with cards lower down. */
 }
 
 .gh-content > blockquote:not([class]) {
+    border-left: 0.3rem solid var(--ghost-accent-color);
+    padding-left: 1.5em;
     position: relative;
     font-style: italic;
-    padding: 0;
 }
-
-.gh-content > blockquote:not([class])::before {
-    content: "";
-    position: absolute;
-    left: -1.5em;
-    top: 0;
-    bottom: 0;
-    width: 0.3rem;
-    background: var(--ghost-accent-color);
-}
-
-/* `prism.css` contains code styles. */
 
 @media (max-width: 650px) {
     .gh-content > blockquote:not([class]),
