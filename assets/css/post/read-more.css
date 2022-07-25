@@ -1,0 +1,31 @@
+/* 7.4. Read more
+/* ---------------------------------------------------------- */
+
+.read-more-wrap {
+    margin-top: 2.4vmin;
+}
+
+.footer-cta + .read-more-wrap {
+    margin-top: max(12vmin, 72px);
+}
+
+.read-more {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4vmin;
+}
+
+.read-more .post-card-tags {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .read-more {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 700px) {
+    .read-more {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

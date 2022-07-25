@@ -1,0 +1,62 @@
+/* 7.1. Post Byline
+/* ---------------------------------------------------------- */
+
+.article-byline {
+    display: flex;
+    justify-content: space-between;
+    margin: min(24px, 5.6vmin) 0 0;
+}
+
+.article-byline-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.article-byline-content .author-list {
+    justify-content: flex-start;
+    padding: 0 14px 0 0;
+}
+
+.article-byline-meta {
+    color: var(--color-secondary-text);
+    font-size: 1.4rem;
+    line-height: 1.2em;
+}
+
+.article-byline-meta .author-name {
+    margin: 0 0 6px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.article-byline-meta .bull {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.author-avatar {
+    display: block;
+    overflow: hidden;
+    margin: 0 -4px;
+    width: min(56px, 13.6vmin);
+    height: min(56px, 13.6vmin);
+    border: #fff 2px solid;
+    border-radius: 50%;
+    background-color: var(--color-border);
+}
+
+.page-template .article-title {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .article-byline-content .author-list {
+        padding-right: 12px;
+    }
+
+    .article-byline-meta .author-name {
+        margin-bottom: 4px;
+    }
+}

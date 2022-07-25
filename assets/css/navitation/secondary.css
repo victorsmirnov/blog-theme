@@ -1,0 +1,44 @@
+/* Secondary Navigation
+/* ---------------------------------------------------------- */
+
+.gh-social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.gh-social-link {
+    line-height: 0;
+    color: inherit;
+}
+
+.gh-social-link:hover {
+    opacity: 0.9;
+}
+
+.gh-social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.gh-head-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    text-align: right;
+}
+
+.gh-head-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    height: 40px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--ghost-accent-color);
+}

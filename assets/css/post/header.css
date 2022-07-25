@@ -1,0 +1,73 @@
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+.article {
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
+    word-break: break-word;
+}
+
+.page-template .article {
+    padding-top: max(12vmin, 64px);
+}
+
+.article-header {
+    padding: 0 0 max(6.4vmin, 40px) 0;
+}
+
+.page-template .article-header {
+    padding-bottom: max(3.2vmin, 28px);
+}
+
+.article-tag {
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+}
+
+.article-tag a {
+    color: var(--color-secondary-text);
+}
+
+.article-title {
+    margin-bottom: 0;
+    color: var(--color-darkgrey);
+}
+
+.has-serif-title .article-title {
+    font-family: var(--font-serif);
+}
+
+.article-excerpt {
+    margin-top: 20px;
+    max-width: 720px;
+    font-size: 2rem;
+    line-height: 1.45;
+    color: var(--color-darkgrey);
+}
+
+.gh-canvas .article-image {
+    grid-column: wide-start / wide-end;
+    width: 100%;
+    margin: max(6.4vmin, 40px) 0 0;
+}
+
+.image-full .article-image {
+    grid-column: full-start / full-end;
+}
+
+.image-small .article-image {
+    grid-column: main-start / main-end;
+}
+
+.gh-canvas .article-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .article-excerpt {
+        margin-top: 14px;
+        font-size: 1.7rem;
+    }
+}

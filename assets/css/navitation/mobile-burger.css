@@ -1,0 +1,85 @@
+/* Mobile Menu Trigger
+/* ---------------------------------------------------------- */
+
+.gh-burger {
+    position: relative;
+    display: none;
+    cursor: pointer;
+}
+
+.gh-burger-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+}
+
+.gh-burger-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.gh-burger-box::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: currentcolor;
+    transition: transform 300ms cubic-bezier(.2, .6, .3, 1), width 300ms cubic-bezier(.2, .6, .3, 1);
+    will-change: transform, width;
+}
+
+.gh-burger-inner::before,
+.gh-burger-inner::after {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: currentcolor;
+    transition: transform 250ms cubic-bezier(.2, .7, .3, 1), width 250ms cubic-bezier(.2, .7, .3, 1);
+    will-change: transform, width;
+}
+
+.gh-burger-inner::before {
+    transform: translatey(-6px);
+}
+
+.gh-burger-inner::after {
+    transform: translatey(6px);
+}
+
+body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::before {
+    transform: translatey(-8px);
+}
+
+body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
+    transform: translatey(8px);
+}
+
+.gh-head-open .gh-burger-box::before {
+    width: 0;
+    transform: translatex(19px);
+    transition: transform 200ms cubic-bezier(.2, .7, .3, 1), width 200ms cubic-bezier(.2, .7, .3, 1);
+}
+
+.gh-head-open .gh-burger-inner::before {
+    width: 26px;
+    transform: translatex(6px) rotate(135deg);
+}
+
+.gh-head-open .gh-burger-inner::after {
+    width: 26px;
+    transform: translatex(6px) rotate(-135deg);
+}

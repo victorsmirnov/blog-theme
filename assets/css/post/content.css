@@ -1,0 +1,137 @@
+/* Content
+/* ---------------------------------------------------------- */
+
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. The main content handles
+headings, text, images and lists. We deal with cards lower down. */
+
+/* Default vertical spacing */
+.gh-content {
+    row-gap: max(3.2vmin, 24px);
+}
+
+/* [id] represents all headings h1-h6, reset all margins */
+.gh-content > [id] {
+    color: var(--color-darkgrey);
+}
+
+.has-serif-title .gh-content > [id] {
+    font-family: var(--font-serif);
+}
+
+/* Now the content typography styles */
+.gh-content a {
+    color: var(--ghost-accent-color);
+    text-decoration: underline;
+    word-break: break-word;
+}
+
+.gh-content > blockquote:not([class]),
+.gh-content > ol,
+.gh-content > ul,
+.gh-content > dl,
+.gh-content > p {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.6em;
+}
+
+.gh-content > blockquote:first-child,
+.gh-content > ol:first-child,
+.gh-content > ul:first-child,
+.gh-content > dl:first-child,
+.gh-content > p:first-child {
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.6em;
+}
+
+.gh-content .kg-product-card .kg-product-card-description > p,
+.gh-content .kg-product-card .kg-product-card-description > ol,
+.gh-content .kg-product-card .kg-product-card-description > ul {
+    font-size: 1.7rem;
+    line-height: 1.6em;
+}
+
+.gh-content .kg-callout-card .kg-callout-emoji {
+    font-size: 2.1rem;
+    line-height: 1.4em;
+}
+
+.gh-content .kg-toggle-card .kg-toggle-heading-text {
+    font-size: 2.0rem;
+}
+
+.has-sans-body .gh-content > blockquote,
+.has-sans-body .gh-content > ol,
+.has-sans-body .gh-content > ul,
+.has-sans-body .gh-content > dl,
+.has-sans-body .gh-content > p,
+.has-sans-body .gh-content .kg-callout-card .kg-callout-text,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: var(--font-sans);
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-product-card .kg-product-card-description > ol,
+.gh-content .kg-product-card .kg-product-card-description > ul {
+    padding-left: 1.9em;
+}
+
+.gh-content > blockquote:not([class]) {
+    position: relative;
+    font-style: italic;
+    padding: 0;
+}
+
+.gh-content > blockquote:not([class])::before {
+    content: "";
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+    width: 0.3rem;
+    background: var(--ghost-accent-color);
+}
+
+/* `prism.css` contains code styles. */
+
+@media (max-width: 650px) {
+    .gh-content > blockquote:not([class]),
+    .gh-content > ol,
+    .gh-content > ul,
+    .gh-content > dl,
+    .gh-content > p,
+    .gh-content .kg-callout-card .kg-callout-text,
+    .gh-content .kg-toggle-card .kg-toggle-content > ol,
+    .gh-content .kg-toggle-card .kg-toggle-content > ul,
+    .gh-content .kg-toggle-card .kg-toggle-content > p {
+        font-size: 1.8rem;
+    }
+
+    .gh-content .kg-product-card .kg-product-card-description > p,
+    .gh-content .kg-product-card .kg-product-card-description > ol,
+    .gh-content .kg-product-card .kg-product-card-description > ul {
+        font-size: 1.6rem;
+    }
+
+    .gh-content blockquote:not([class])::before {
+        left: min(-4vmin, -20px);
+    }
+}

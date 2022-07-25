@@ -1,0 +1,69 @@
+/* 9. Error Template
+/* ---------------------------------------------------------- */
+
+.error-content {
+    padding: 14vw 4vw 2vw;
+}
+
+.error-message {
+    padding-bottom: 10vw;
+    text-align: center;
+}
+
+.error-code {
+    margin: 0;
+    font-size: 12vw;
+    line-height: 1em;
+    letter-spacing: -5px;
+}
+
+.error-description {
+    margin: 0;
+    color: var(--color-secondary-text);
+    font-size: 3.2rem;
+    line-height: 1.3em;
+    letter-spacing: -0.005em;
+    font-weight: 400;
+}
+
+.error-link {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+@media (min-width: 940px) {
+    .error-content .post-card {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .error-content {
+        padding-top: 24vw;
+    }
+
+    .error-code {
+        font-size: 11.2rem;
+    }
+
+    .error-message {
+        padding-bottom: 16vw;
+    }
+
+    .error-description {
+        margin: 5px 0 0 0;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .error-content {
+        padding-top: 28vw;
+    }
+
+    .error-message {
+        padding-bottom: 14vw;
+    }
+}

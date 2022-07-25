@@ -40,7 +40,7 @@ function hbs(done) {
 
 function css(done) {
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
+        src('assets/css/screen.css', {sourcemaps: true}),
         postcss([
             easyImport,
             colorFunction(),

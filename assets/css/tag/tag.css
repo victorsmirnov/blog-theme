@@ -1,0 +1,10 @@
+/* 8. Tag Template
+/* ---------------------------------------------------------- */
+
+.tag-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    word-break: break-word;
+}

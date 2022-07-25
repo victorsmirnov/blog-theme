@@ -1,0 +1,93 @@
+/* Mobile Menu
+/* ---------------------------------------------------------- */
+/* IDs needed to ensure sufficient specificity */
+
+@media (max-width: 991px) {
+    .gh-burger {
+        display: inline-block;
+    }
+
+    #gh-head {
+        overflow: hidden;
+    }
+
+    #gh-head .gh-head-inner {
+        height: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    #gh-head .gh-head-brand {
+        position: relative;
+        z-index: 10;
+        grid-column-start: auto;
+        max-width: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+    }
+
+    #gh-head .gh-head-menu {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 10vh 0;
+        font-weight: 300;
+        font-size: 3.6rem;
+        line-height: 1.1em;
+    }
+
+    #gh-head .gh-head-menu .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        font-weight: 500;
+    }
+
+    #gh-head .gh-head-actions {
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 20px 0 32px;
+        text-align: left;
+    }
+
+    /* Hide collapsed content */
+    #gh-head .gh-head-actions,
+    #gh-head .gh-head-menu {
+        display: none;
+    }
+
+    /* Open the menu */
+    .gh-head-open {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .gh-head-open #gh-head {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 3999999;
+        overflow-y: scroll;
+    }
+
+    .gh-head-open #gh-head .gh-head-inner {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .gh-head-open #gh-head .gh-head-actions,
+    .gh-head-open #gh-head .gh-head-menu {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    #gh-head .gh-head-menu {
+        font-size: 6vmin;
+    }
+}

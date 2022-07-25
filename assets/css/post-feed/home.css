@@ -1,0 +1,29 @@
+/* 6.1 Posts on the Homepage
+/* ---------------------------------------------------------- */
+.post-home-feed {
+    display: grid;
+    grid-template-columns:
+        [full-start]
+        minmax(max(4vmin, 20px), auto)
+            [wide-start]
+            minmax(auto, 240px)
+                [main-start]
+                    min(720px, calc(100% - max(8vmin, 40px)))
+                [main-end]
+            minmax(auto, 240px)
+            [wide-end]
+        minmax(max(4vmin, 20px), auto)
+        [full-end];
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
+    row-gap: 4.8vmin;
+}
+
+.post-home-feed > article {
+    grid-column: main-start / main-end;
+}
+
+@media (max-width: 767px) {
+    .post-home-feed {
+        row-gap: 40px;
+    }
+}

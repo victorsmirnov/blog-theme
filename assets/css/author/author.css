@@ -1,0 +1,50 @@
+/* 8. Author Template
+/* ---------------------------------------------------------- */
+
+.author-profile-pic {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin: 0 0 2rem;
+    background: color-mod(var(--color-lightgrey) l(+10%));
+    border-radius: 50%;
+}
+
+.author-profile-footer {
+    margin-top: 16px;
+}
+
+.author-profile-location {
+    font-weight: 700;
+}
+
+.author-profile-meta {
+    display: flex;
+    gap: 10px;
+}
+
+.author-profile-social-link {
+    font-size: 1.3rem;
+    color: var(--color-secondary-text);
+}
+
+.author-profile-social-link:hover {
+    color: var(--color-darkgrey);
+}
+
+.author-profile-social-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Author template
+/* ---------------------------------------------------------- */
+.author-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    word-break: break-word;
+}

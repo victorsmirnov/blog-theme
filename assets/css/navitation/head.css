@@ -1,0 +1,21 @@
+/* 5. Site Navigation
+/* ---------------------------------------------------------- */
+
+.gh-head {
+    padding-top: min(24px, 3.6vmin);
+    padding-bottom: min(24px, 3.6vmin);
+    font-size: 1.6rem;
+    line-height: 1.3em;
+    background-color: #fff;
+}
+
+.gh-head a {
+    text-decoration: none;
+}
+
+.gh-head-inner {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: auto auto 1fr;
+    grid-auto-flow: row dense;
+}

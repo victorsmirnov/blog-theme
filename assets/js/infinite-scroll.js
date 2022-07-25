@@ -5,12 +5,12 @@
  * Used on all pages where there is a list of posts (homepage, tag index, etc).
  *
  * When the page is scrolled to 300px from the bottom, the next page of posts
- * is fetched by following the the <link rel="next" href="..."> that is output
+ * is fetched by following the <link rel="next" href="..."> that is output
  * by {{ghost_head}}.
  *
  * The individual post items are extracted from the fetched pages by looking for
  * a wrapper element with the class "post-card". Any found elements are appended
- * to the element with the class "post-feed-scroll" in the currently viewed page.
+ * to the element with the class "js-post-feed-scroll" in the currently viewed page.
  */
 
 (function (window, document) {
