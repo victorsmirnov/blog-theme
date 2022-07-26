@@ -11,7 +11,7 @@
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap"/>
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}"/>
 
     {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
@@ -56,12 +56,14 @@
                 <div class="gh-social">
                     {{#if @site.facebook}}
                         <a class="gh-social-link gh-social-facebook" href="{{facebook_url @site.facebook}}"
-                           title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                           title="Facebook" rel="nofollow">{{> "icons/facebook"}}</a>
                     {{/if}}
                     {{#if @site.twitter}}
                         <a class="gh-social-link gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter"
-                           target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                           rel="nofollow">{{> "icons/twitter"}}</a>
                     {{/if}}
+                    <a class="gh-social-link gh-social-github" href="https://github.com/victorsmirnov" title="GitHub"
+                       rel="nofollow">{{> "icons/github"}}</a>
                 </div>
                 {{#if @site.members_enabled}}
                     {{#unless @member}}
@@ -82,12 +84,14 @@
     {{!-- The global footer at the very bottom of the screen --}}
     <footer class="site-footer outer">
         <div class="inner">
-            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
-            </section>
+            <section class="copyright">&copy;&nbsp;{{@site.title}}. All Rights Reserved.</section>
             <nav class="site-footer-nav">
                 {{navigation type="secondary"}}
             </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+            <section class="credits">
+                Published with <a href="https://ghost.org/" rel="nofollow">Ghost</a>
+                &nbsp;•&nbsp;Theme <a href="https://github.com/victorsmirnov/blog-theme" rel="nofollow">blog-theme</a>
+            </section>
         </div>
     </footer>
 
