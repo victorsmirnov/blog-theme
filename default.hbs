@@ -19,6 +19,9 @@
             src="https://code.jquery.com/jquery-3.5.1.min.js">
     </script>
     <script defer src="{{asset "built/blog-theme.js"}}"></script>
+    {{#if @custom.google_optimize_id}}
+        <script src="https://www.googleoptimize.com/optimize.js?id={{@custom.google_optimize_id}}"></script>
+    {{/if}}
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}

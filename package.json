@@ -64,6 +64,10 @@
                 "type": "text",
                 "default": "Sign up for more like this.",
                 "group": "post"
+            },
+            "google_optimize_id": {
+                "type": "text",
+                "default": ""
             }
         }
     },
