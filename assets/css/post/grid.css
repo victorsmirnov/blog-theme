@@ -13,7 +13,7 @@ use it for applying any other styles. */
             [wide-start]
             minmax(auto, 240px)
                 [main-start]
-                    min(720px, calc(100% - max(8vmin, 40px)))
+                    min(65ch, calc(100% - max(8vmin, 40px)))
                 [main-end]
             minmax(auto, 240px)
             [wide-end]
@@ -23,6 +23,8 @@ use it for applying any other styles. */
 
 .gh-canvas > * {
     grid-column: main-start / main-end;
+    /* Prevent grid blowout. See for more details https://css-tricks.com/preventing-a-grid-blowout/ */
+    min-width: 0;
 }
 
 .kg-width-wide {

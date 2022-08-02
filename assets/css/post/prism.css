@@ -45,19 +45,6 @@ green     #859900
 	grid-column: wide-start/wide-end;
 }
 
-/*
-  I do not understand how the following two definitions work.
-
-  When we have <pre> block inside <figure> and set `grid-column: wide-start/wide-end;` for the figure,
-  then the <pre> block takes the width of it's content. But when we set `white-space: pre-wrap;` for the <pre> block,
-  then the <pre> block has the width of the parent <figure> block.
-
-  We do not need this for the <pre> block when it is a direct child of the `.gh-content`.
- */
-.kg-code-card > pre {
-	white-space: pre-wrap;
-}
-
 :not(.kg-code-card) > pre {
 	white-space: pre;
 }
