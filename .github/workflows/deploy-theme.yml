@@ -23,9 +23,6 @@ jobs:
         with:
           role-to-assume: ${{ secrets.ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
-      - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-          PATHS: "/assets/built/*"
-          AWS_REGION: "us-east-1"
+      - name: Copy asset files to S3
+        run: |
+          aws s3 sync ./assets/built s3://victorsmirnov.blog/public/assets/built
