@@ -1,0 +1,14 @@
+.skip-link {
+    background-color: white;
+    border-radius: .2em;
+    outline: 1px solid var(--color-midgrey);
+    padding: .5em;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    z-index: -999;
+}
+
+.skip-link:focus {
+    z-index: 500;
+}
